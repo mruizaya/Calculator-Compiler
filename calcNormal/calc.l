@@ -5,7 +5,8 @@
 
 %%
 
-[0-9]+        { yylval = atoi(yytext); return NUM; }
+[0-9]+\.[0-9]+       { yylval.dec = strtod(yytext, NULL); return NUM; }
+[0-9]+               { yylval.dec = strtod(yytext, NULL); return NUM; }
 
 "+"           { return MAS; }
 "-"           { return MENOS; }
