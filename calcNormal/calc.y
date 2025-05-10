@@ -6,7 +6,11 @@ int yylex();
 void yyerror(const char *s);
 %}
 
-%token NUM
+%union {
+    double dec;
+}
+
+%token <dec> NUM
 %token MAS MENOS MULT DIV
 %token LPAREN RPAREN
 
